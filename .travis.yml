@@ -1,0 +1,11 @@
+language: ruby
+rvm:
+    - 2.3.3
+before_script:
+    - chmod +x ./script/cibuild
+install: gem install jekyll html-proofer && bundle install
+script: ./script/cibuild
+env:
+    global:
+        - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+sudo: false
